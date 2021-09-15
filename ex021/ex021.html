@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+        :root{
+            --cor01: #A8119E;
+            --cor02: #F501E5;
+            --cor03: #08A896;
+            --cor04: #18F5DC;
+            --cor05: #F5C818;
+            --fonte-padrao:'Source Sans Pro', sans-serif;
+        }
+        *{
+            font-family: var(--fonte-padrao);
+            padding: 0px;
+            margin: 0px;
+        }
+        header{
+            background-color: var(--cor05);
+            min-height: 100px;
+            padding-top: 40px; 
+            box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.438);
+        }
+        header > h1{
+        text-shadow: 2px 2px 0px black;
+        color: var(--cor02);
+        text-align: center;
+        font-family:var(--font-destaque);
+        font-weight: bolder;
+        font-size: 30pt;
+        margin-bottom: 10px;
+        }
+        body{
+            background-color: var(--cor03);
+            font-family: var(--fonte-padrao);
+        }
+        main{
+            font-family: var(--fonte-padrao);
+            text-align:center;
+            background-color: white;
+            min-width: 300px;
+            max-width: 1000px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: white;
+            border-radius: 5px;
+            
+            margin: auto;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        main > h2{
+            padding: 20px;
+        }
+        button{
+            background-color: var(--cor04);color: white; font-size: 12pt;
+            color: black;
+            font-family: var(--fonte-padrao);
+            font-weight: bolder;
+        }
+        footer{
+            background-color: var(--cor04);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>SUPER TABUADA</h1>
+    </header>
+    <main>
+    <h2>Escreva um número na caixa a seguir</h2>
+    <p>Número: <input type="number" name="numero" id="num"> <button onclick="tabuada()">Tabuada</button></p>
+    <p id="res">Preencha os dados acima e aperte o botão.</p>   
+    </main>
+    <footer>
+        <p>Criado por Amanda Silva</p>
+    </footer>
+     
+    
+    
+    
+
+   <script>
+       function tabuada() {
+           var num = Number(document.getElementById('num').value)
+            var res = document.getElementById('res')
+            var num2 = 1
+            res.innerHTML = `<h2>Tabuada de ${num}</h2>`
+            while (num2 <= 10) {
+            res.innerHTML += `<p>${num} x ${num2} = ${num*num2}</p>`
+            num2 ++
+        }
+       
+       }
+   </script>
+</body>
+</html>
